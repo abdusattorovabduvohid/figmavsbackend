@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Montserrat;
+}
+
+button {
+  border: none;
+  background: none;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  border-radius: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+
+.wall {
+  width: 1200px;
+  margin: 0 auto;
+  padding: 15px 15px;
+}
