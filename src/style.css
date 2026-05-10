@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+@layer components {
+  .pizza-card {
+    @apply bg-[#2A1006] p-6 rounded-[40px] flex flex-col items-center text-center text-white border border-transparent transition-all duration-300 h-full;
+  }
+
+  .pizza-card:hover {
+    @apply border-[#FF5924] shadow-2xl;
+    transform: translateY(-5px);
+  }
+
+  .pizza-img {
+    @apply object-contain w-40 h-40 mb-4 cursor-pointer;
+  }
+
+  .pizza-title {
+    @apply mb-2 text-2xl font-bold cursor-pointer;
+  }
+
+  .pizza-desc {
+    @apply h-8 px-2 mb-6 text-xs text-gray-400 line-clamp-2;
+  }
+
+  .size-selector {
+    @apply flex bg-[#1A0802] rounded-full p-1 mb-6 w-full max-w-[200px] justify-between border border-gray-800;
+  }
+
+  .size-btn {
+    @apply flex-1 py-1.5 text-sm rounded-full transition-all duration-200 text-gray-400;
+  }
+
+  .size-btn.active {
+    @apply bg-gradient-to-r from-[#FF5924] to-[#FFA229] text-white font-bold;
+  }
+
+  .ingredients-btn {
+    @apply mb-6 text-[#FFA229] text-sm border border-[#FFA229] px-4 py-1 rounded-full hover:bg-[#FFA229] hover:text-[#210A01] transition-all;
+  }
+
+  .card-footer {
+    @apply flex items-center justify-between w-full mb-6;
+  }
+
+  .price-text {
+    @apply text-xl font-bold text-white;
+  }
+
+  .counter-wrapper {
+    @apply flex items-center gap-3 bg-[#1A0802] px-3 py-1 rounded-full border border-gray-800;
+  }
+
+  .minus-btn {
+    @apply text-lg text-gray-400;
+  }
+
+  .plus-btn {
+    @apply text-[#FFA229] text-lg;
+  }
+
+  .count-display {
+    @apply font-bold text-white;
+  }
+
+  .order-now-btn {
+    @apply w-full py-3 font-bold text-white transition-all duration-300 rounded-full active:scale-95;
+    background: linear-gradient(261.69deg, #FF5924 12.12%, #FFA229 86.72%);
+  }
+
+  .text-gradient {
+    background: linear-gradient(261.69deg, #ff6432 12.12%, #ffa228 86.72%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .btn-gradient {
+    background: linear-gradient(261.69deg, #ff6432 12.12%, #ffa228 86.72%);
+  }
+}

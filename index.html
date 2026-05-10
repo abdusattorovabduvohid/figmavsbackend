@@ -2,29 +2,478 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mahsulotla</title>
-    <link rel="stylesheet" href="./dist/css/index.min.css" />
+    <title>PizzaShop</title>
+    <link href="/src/style.css" rel="stylesheet" />
   </head>
-  <body>
-    <h1>Menu</h1>
-    <br />
-    <div class="input">
-      <!-- <h2>Mahsulot qoshish</h2> -->
+  <body class="bg-[#210a01]">
+    <header class="sticky top-0 z-50 bg-[#210a01] border-b border-[#ff6432]/20">
+      <div class="container flex items-center justify-between px-4 py-4 mx-auto">
+        <div class="text-2xl font-bold text-gradient">pizzashop</div>
+        <nav class="hidden gap-8 md:flex">
+          <a href="#" class="text-[#ffa228] transition hover:opacity-80">Home</a>
+          <a href="#menu" class="text-[#ffa228] transition hover:opacity-80">Menu</a>
+          <a href="#events" class="text-[#ffa228] transition hover:opacity-80">Events</a>
+          <a href="#about" class="text-[#ffa228] transition hover:opacity-80">About us</a>
+        </nav>
+        <div class="flex items-center gap-4">
+          <button class="px-10 py-2 font-semibold text-white transition rounded-full hover:opacity-90 btn-gradient">
+            Log in
+          </button>
+          <button class="flex items-center justify-center w-10 h-10 transition rounded-full hover:opacity-90">
+            <img src="/cart.svg" alt="cart" />
+          </button>
+        </div>
+      </div>
+    </header>
 
-      <!-- <form id="form">
-      <input id="title" placeholder="Mahsulot nomi" required />
-      <input id="price" placeholder="Narxi" required />
-      <input id="image" placeholder="Rasmi URL bilan" required />
+    <main>
+      <section class="py-16 md:py-24">
+        <div class="container px-4 mx-auto">
+          <div class="grid items-center gap-12 md:grid-cols-2">
+            <div>
+              <h1 class="mb-6 text-5xl font-bold text-white md:text-6xl">
+                The Fastest<br />
+                <span class="flex items-center gap-3">
+                  Pizza <img src="/hero-text-svg.svg" alt="" /> Delivery
+                </span>
+              </h1>
+              <p class="mb-8 text-lg text-gray-300">
+                We will deliver juicy pizza for your family in 30 minutes, if the courier is late - pizza is free!
+              </p>
+              <div class="mb-12">
+                <p class="mb-4 text-gray-400">Cooking process:</p>
+                <div class="w-48 h-40 overflow-hidden rounded-3xl">
+                  <img src="/hero-image1.png" alt="cooking" class="object-cover w-full h-full" />
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <button class="px-8 py-3 font-semibold text-white bg-orange-500 rounded-full hover:bg-orange-600">To order</button>
+                <button class="px-8 py-3 font-semibold text-orange-500 transition border-2 border-orange-500 rounded-full hover:bg-orange-500 hover:text-white">Pizza-Menu</button>
+              </div>
+            </div>
+            <div class="flex justify-center">
+              <div class="w-full overflow-hidden rounded-3xl">
+                <img src="/hero-image2.png" alt="hero-pizza" class="object-cover w-full h-full" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-      <button>Yaratish</button>
-    </form> -->
-    </div>
+      <section id="menu" class="py-16 md:py-24">
+        <div class="container px-4 mx-auto max-w-7xl">
+          <h2 class="mb-16 text-5xl italic font-bold text-center text-white">Menu</h2>
+          <div id="menu-grid" class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4"></div>
+        </div>
+      </section>
 
-    <div id="products-container" class="grid"></div>
+      <section class="py-16">
+        <div class="container px-4 mx-auto max-w-7xl">
+          <div class="relative mb-16">
+            <div class="flex items-center justify-center w-full h-40 overflow-hidden bg-gray-700 md:h-56 rounded-3xl">
+              <img src="/popular-image.png" alt="most-popular-banner" class="object-cover w-full h-full brightness-50" />
+              <h2 class="absolute text-4xl font-bold text-white uppercase md:text-5xl">Most Popular Pizza</h2>
+            </div>
+          </div>
+          <div id="popular-grid" class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4"></div>
+        </div>
+      </section>
 
-    <div id="product-modal" class="modal"></div>
 
-    <script src="index.js"></script>
+    <section
+      id="events"
+      class="py-16 md:py-24"
+      style="background-color: #210a01"
+    >
+      <div class="container px-4 mx-auto">
+        <h2 class="mb-16 text-5xl font-bold text-center text-white">Events</h2>
+        <p class="max-w-2xl mx-auto mb-12 text-center text-gray-300">
+          There are regular events in our pizzeria that will allow you to eat
+          delicious food for a lower price!
+        </p>
+
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+
+
+          <div
+            class="relative h-56 overflow-hidden cursor-pointer group rounded-3xl"
+          >
+
+            <img
+              src="/public/events1.png"
+              alt="event"
+              class="object-cover w-full h-full transition duration-300 group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 flex flex-col justify-end p-6 bg-gradient-to-t from-black/70 to-transparent"
+            >
+              <h3 class="mb-4 text-2xl font-bold text-white">HOW WE COOKING</h3>
+              <button
+                class="self-start px-16 py-2 font-semibold text-white transition rounded-full hover:opacity-90"
+                style="
+                  background: linear-gradient(
+                    261.69deg,
+                    #ff6432 12.12%,
+                    #ffa228 86.72%
+                  );
+                "
+              >
+                More
+              </button>
+            </div>
+          </div>
+
+          <div
+            class="relative h-56 overflow-hidden cursor-pointer group rounded-3xl"
+          >
+            <img
+              src="/public/events2.png"
+              alt="event"
+              class="object-cover w-full h-full transition duration-300 group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 flex flex-col justify-end p-6 bg-gradient-to-t from-black/70 to-transparent"
+            >
+              <h3 class="mb-4 text-2xl font-bold text-white">OUR BLOG</h3>
+              <button
+                class="self-start px-16 py-2 font-semibold text-white transition rounded-full hover:opacity-90"
+                style="
+                  background: linear-gradient(
+                    261.69deg,
+                    #ff6432 12.12%,
+                    #ffa228 86.72%
+                  );
+                "
+              >
+                More
+              </button>
+            </div>
+          </div>
+
+          <div
+            class="relative h-full overflow-hidden cursor-pointer md:row-span-2 group min-h-96 rounded-3xl md:col-start-3"
+          >
+            <img
+              src="/public/events3.png"
+              alt="events-side"
+              class="object-cover w-full h-full transition duration-300 group-hover:scale-110"
+            />
+
+          </div>
+
+          <div
+            class="relative h-56 overflow-hidden cursor-pointer group rounded-3xl"
+          >
+
+            <img
+              src="/public/events4.png"
+              alt="event"
+              class="object-cover w-full h-full transition duration-300 group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 flex flex-col justify-end p-6 bg-gradient-to-t from-black/70 to-transparent"
+            >
+              <h3 class="mb-4 text-2xl font-bold text-white">
+                TWO PIZZA FOR 1 PRICE
+              </h3>
+              <button
+                class="self-start px-16 py-2 font-semibold text-white transition rounded-full hover:opacity-90"
+                style="
+                  background: linear-gradient(
+                    261.69deg,
+                    #ff6432 12.12%,
+                    #ffa228 86.72%
+                  );
+                "
+              >
+                More
+              </button>
+            </div>
+          </div>
+
+          <div
+            class="relative h-56 overflow-hidden cursor-pointer group rounded-3xl"
+          >
+            <img
+              src="/public/events5.png"
+              alt="event"
+              class="object-cover w-full h-full transition duration-300 group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 flex flex-col justify-end p-6 bg-gradient-to-t from-black/70 to-transparent"
+            >
+              <h3 class="mb-4 text-2xl font-bold text-white">KITCHEN TOUR</h3>
+              <button
+                class="self-start px-16 py-2 font-semibold text-white transition rounded-full hover:opacity-90"
+                style="
+                  background: linear-gradient(
+                    261.69deg,
+                    #ff6432 12.12%,
+                    #ffa228 86.72%
+                  );
+                "
+              >
+                More
+              </button>
+            </div>
+          </div>
+
+          <div
+            class="relative h-56 overflow-hidden cursor-pointer group rounded-3xl md:col-start-1"
+          >
+            <img
+              src="/public/events6.png"
+              alt="event"
+              class="object-cover w-full h-full transition duration-300 group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 flex flex-col justify-end p-6 bg-gradient-to-t from-black/70 to-transparent"
+            >
+              <h3 class="mb-4 text-2xl font-bold text-white">
+                FREE COFFEE FOR 3 PIZZA
+              </h3>
+              <button
+                class="self-start px-16 py-2 font-semibold text-white transition rounded-full hover:opacity-90"
+                style="
+                  background: linear-gradient(
+                    261.69deg,
+                    #ff6432 12.12%,
+                    #ffa228 86.72%
+                  );
+                "
+              >
+                More
+              </button>
+            </div>
+          </div>
+
+          <div
+            class="relative h-56 overflow-hidden cursor-pointer group rounded-3xl"
+          >
+
+            <img
+              src="/public/events1.png"
+              alt="event"
+              class="object-cover w-full h-full transition duration-300 group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 flex flex-col justify-end p-6 bg-gradient-to-t from-black/70 to-transparent"
+            >
+              <h3 class="mb-4 text-2xl font-bold text-white">OUR INSTAGRAM</h3>
+              <button
+                class="self-start px-16 py-2 font-semibold text-white transition rounded-full hover:opacity-90"
+                style="
+                  background: linear-gradient(
+                    261.69deg,
+                    #ff6432 12.12%,
+                    #ffa228 86.72%
+                  );
+                "
+              >
+                More
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="about"
+      class="py-16 md:py-24"
+      style="background-color: #210a01"
+    >
+      <div class="container px-4 mx-auto">
+        <div class="grid items-center gap-12 md:grid-cols-2">
+
+          <div>
+            <h2 class="mb-8 text-5xl font-bold text-white">About us</h2>
+            <p class="mb-6 leading-relaxed text-gray-300">
+              In just a couple of years, we have opened 6 outlets in different
+              cities: Kazan, Chelyabinsk, Ufa, Samara, Izhevsk, and in the
+              future we plan to develop the network in other major cities of
+              Russia.
+            </p>
+            <div class="flex gap-4">
+              <div class="overflow-hidden rounded-2xl">
+                <img src="/public/about1.png" alt="pizza-1" class="object-cover w-full h-full" />
+              </div>
+            </div>
+            <p class="mb-8 leading-relaxed text-gray-300">
+              The kitchen of each point is at least: 400-500 sq. m. meters,
+              hundreds of employees, smoothly performing work in order to
+              receive / prepare / form / deliver customer orders on time.
+            </p>
+
+          </div>
+
+          <div class="flex justify-center">
+            <div
+              class="flex items-center justify-center w-full overflow-hidden rounded-3xl"
+            >
+              <img
+                src="/public/about2.png"
+                alt="about-pizza"
+                class="object-cover w-full h-full"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer
+      class="py-12 border-t md:py-16"
+      style="background-color: #1a0802; "
+    >
+      <div class="container px-4 mx-auto">
+        <div class="grid grid-cols-1 gap-8 mb-12 md:grid-cols-5">
+
+          <div>
+            <h3
+              class="mb-4 text-2xl font-bold"
+              style="
+                background: linear-gradient(
+                  261.69deg,
+                  #ff6432 12.12%,
+                  #ffa228 86.72%
+                );
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+              "
+            >
+              pizzashop
+            </h3>
+          </div>
+
+
+          <div>
+            <h4 class="mb-4 font-bold text-white">Home</h4>
+            <ul class="space-y-2">
+              <li>
+                <a href="#" class="text-gray-400 transition" style="color: #ccc"
+                  >To Order</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 transition" style="color: #ccc"
+                  >About us</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 transition" style="color: #ccc"
+                  >Events</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 transition" style="color: #ccc"
+                  >Menu</a
+                >
+              </li>
+            </ul>
+          </div>
+
+
+          <div>
+            <h4 class="mb-4 font-bold text-white">Events</h4>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 transition hover:text-orange-500"
+                  >3 Pizza 1 Free Coffee</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 transition hover:text-orange-500"
+                  >2 Pizza for 1 Price</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 transition hover:text-orange-500"
+                  >Kitchen Tour</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="mb-4 font-bold text-white">Menu</h4>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 transition hover:text-orange-500"
+                  >Show All</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 transition hover:text-orange-500"
+                  >Seaproducts</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 transition hover:text-orange-500"
+                  >Vegan</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 transition hover:text-orange-500"
+                  >Meat</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="mb-4 font-bold text-white">About Us</h4>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 transition hover:text-orange-500"
+                  >Our History</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 transition hover:text-orange-500"
+                  >Why We?</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div
+          class="flex flex-col items-center justify-between pt-8 border-t border-slate-800 md:flex-row"
+        >
+          <p class="text-lg font-semibold text-orange-500">
+            +7 (937) 333-55-33
+          </p>
+
+          <div class="flex gap-6 mt-6 md:mt-0">
+
+            <img src="/public/socials.svg" alt="">
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/index.js"></script>
   </body>
 </html>
